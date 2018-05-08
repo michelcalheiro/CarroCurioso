@@ -301,15 +301,14 @@ $scope.definirPlaca = function()    {
 
       $scope.takePhoto = function () {
         var options = {
-          quality: 90,
+          quality: 100,
           destinationType: Camera.DestinationType.DATA_URL,
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: true,
           encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 600,
           popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
+          saveToPhotoAlbum: false,
+          correctOrientatio:true
       };
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
@@ -322,7 +321,7 @@ $scope.definirPlaca = function()    {
 
       $scope.choosePhoto = function () {
         var options = { 
-          quality: 75,
+          quality: 100,
           destinationType: Camera.DestinationType.DATA_URL,
           sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
           allowEdit: true,
