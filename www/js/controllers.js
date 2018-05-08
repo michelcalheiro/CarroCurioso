@@ -215,6 +215,8 @@ $scope.definirPlaca = function()    {
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: true,
           encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
           popoverOptions: CameraPopoverOptions,
           saveToPhotoAlbum: false,
           correctOrientatio:true
