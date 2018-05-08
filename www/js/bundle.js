@@ -292,6 +292,47 @@ $scope.definirPlaca = function()    {
     });
 }
 
+
+$scope.takePhoto = function () {
+  var options = {
+    quality: 100,
+    destinationType: Camera.DestinationType.DATA_URL,
+    sourceType: Camera.PictureSourceType.CAMERA,
+    allowEdit: true,
+    encodingType: Camera.EncodingType.JPEG,
+    targetWidth: 320,
+    targetHeight: 240,
+    popoverOptions: CameraPopoverOptions,
+    saveToPhotoAlbum: false,
+    correctOrientatio:true
+};
+
+    $cordovaCamera.getPicture(options).then(function (imageData) {
+        $scope.imgURI = "data:image/jpeg;base64," + imageData;
+    }, function (err) {
+        // An error occured. Show a message to the user
+    });
+}
+
+$scope.testOcrad = function(){
+  $ionicLoading.show();
+  try {
+      OCRAD(document.getElementById("pic"), function(text){
+        console.log(text);
+        alert(text);
+      });
+       $ionicLoading.hide();
+  }
+  catch(err) {
+       $ionicLoading.hide();
+  }
+ 
+}
+
+$scope.doThis = function(){
+  $scope.testOcrad();
+}
+
 }])
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -316,8 +357,6 @@ $scope.definirPlaca = function()    {
 .controller('AccountCtrl', function($scope, $cordovaCamera, $ionicLoading) {
 
     
-
-
       $scope.takePhoto = function () {
         var options = {
           quality: 100,
@@ -363,8 +402,13 @@ $scope.definirPlaca = function()    {
         $ionicLoading.show();
         try {
             OCRAD(document.getElementById("pic"), function(text){
-              console.log(text);
-              alert(text);
+              $scope.placa = text;
+              if (text.length == 8) {
+                  $scope.placa = $scope.placa.replace("-","");
+                  $scope.consultarPlaca($scope.placa);
+              }
+              //console.log(text);
+              //alert(text);
             });
              $ionicLoading.hide();
         }
@@ -374,8 +418,7 @@ $scope.definirPlaca = function()    {
        
       }
 
-
-    $scope.doThis = function(){
+      $scope.doThis = function(){
         $scope.testOcrad();
       }
       

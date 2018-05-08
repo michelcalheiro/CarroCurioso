@@ -4,10 +4,12 @@
 
         {{consulta}}
 
-        <label class="item item-input" id="curiar-input2">
-          <span class="input-label">Placa</span>
-          <input type="text" placeholder="AAA0000" ng-model="placa" ng-change="placa=placa.toUpperCase();">
-        </label>
+      <button id="takephoto" class="button button-energized button-block icon-left ion-android-camera" ng-click="takePhoto()">OCR</button>
+
+      <label class="item item-input" id="curiar-input2">
+        <span class="input-label">Placa</span>
+        <input type="text" placeholder="AAA0000" ng-model="placa" ng-change="placa=placa.toUpperCase();">
+      </label>
 
       <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca(placa)">Curiar</button>
 
@@ -38,6 +40,9 @@
       <div class="col" style="text-align: center;">
         <button class="button icon-left ion-thumbsup button-energized {{showB}}" padding-left ng-click="definirPlaca()">Definir Placa Fipe</button>
       </div>
+
+      <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="display: none" id="pic" imageonload="doThis()">
+
     </form>
   </ion-content>
 </ion-view>
