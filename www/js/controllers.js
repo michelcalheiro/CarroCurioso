@@ -215,8 +215,8 @@ $scope.definirPlaca = function()    {
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: true,
           encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
+          targetWidth: 320,
+          targetHeight: 240,
           popoverOptions: CameraPopoverOptions,
           saveToPhotoAlbum: false,
           correctOrientatio:true
@@ -224,7 +224,7 @@ $scope.definirPlaca = function()    {
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
               $scope.imgURI = "data:image/jpeg;base64," + imageData;
-              //$scope.testOcrad();
+              $scope.testOcrad();
           }, function (err) {
               // An error occured. Show a message to the user
           });
