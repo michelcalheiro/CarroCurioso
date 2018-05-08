@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
       }
 
       $scope.choosePhoto = function () {
-        var options = {
+        var options = { 
           quality: 75,
           destinationType: Camera.DestinationType.DATA_URL,
           sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
