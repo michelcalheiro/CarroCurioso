@@ -206,7 +206,7 @@ $scope.definirPlaca = function()    {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope, $cordovaCamera) {
+.controller('AccountCtrl', function($scope, $cordovaCamera, $ionicLoading) {
 
       $scope.takePhoto = function () {
         var options = {
@@ -247,6 +247,15 @@ $scope.definirPlaca = function()    {
               // An error occured. Show a message to the user
           });
       }
+
+      $scope.testOcrad = function(){
+        $ionicLoading.show();
+        OCRAD(document.getElementById("pic"), function(text){
+          $ionicLoading.hide();
+          console.log(text);
+          alert(text);
+        });
+      } 
 
 
 });

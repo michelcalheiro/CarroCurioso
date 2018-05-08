@@ -2,13 +2,16 @@
   <ion-content>
 
 <button class="button button-full button-assertive" ng-click="takePhoto()">
-Take Photo
+Tira Foto
 </button>
 <button class="button button-full button-assertive" ng-click="choosePhoto()">
-Choose Photo
+Escolhe Foto
+</button>
+<button class="button button-full button-assertive" ng-click="testOcrad()">
+Analisa Foto
 </button>
 
-<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
+<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center" id="pic">
 
   </ion-content>
 </ion-view>

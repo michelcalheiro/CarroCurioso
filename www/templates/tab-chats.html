@@ -1,16 +1,39 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Informações">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+    <div id="curiar-markdown1" class="show-list-numbers-and-dots" ng-model="consulta" >
+    <p style="color:#000000;">Código: <b>{{dadosmodelomr[0].codigo_veiculo}}</b></p>
+    <p style="color:#000000;">Fipe: <b>{{dadosmodelomr[0].codigo_fipe}}</b></p>
+    <p style="color:#000000;">Tipo de Motor:<b>{{dadosmodelomr[0].tipo_motor}}</b></p>
+    <p style="color:#000000;">Pistões: <b>{{dadosmodelomr[0].qnt_pistoes}}</b></p>
+    <p style="color:#000000;">Aspiracao: <b>{{dadosmodelomr[0].tipo_aspiracao}}</b></p>
+    <p style="color:#000000;">Tamanho: <b>{{dadosmodelomr[0].tamanho_motor}}</b> l</p>
+    <p style="color:#000000;">Potência: <b>{{dadosmodelomr[0].potencia_motor}}</b> cv</p>
+    <p style="color:#000000;">0-100: <b>{{dadosmodelomr[0].zerocem}}</b> s</p>
+    <p style="color:#000000;">Frenagem 100-0: <b>{{dadosmodelomr[0].cemzero}}</b> m</p>
+    <p style="color:#000000;">Velocidade Máxima: <b>{{dadosmodelomr[0].velocidademaxima}}</b> km/h</p>
+    <p style="color:#000000;">Torque: <b>{{dadosmodelomr[0].torque_motor}}</b> kgfm</p>
+    <p style="color:#000000;">Tração: <b>{{dadosmodelomr[0].tipo_tracao}}</b></p>
+    <p style="color:#000000;">Câmbio: <b>{{dadosmodelomr[0].tipo_cambio}}</b></p>
+    <p style="color:#000000;">Qnt Marchas :<b>{{dadosmodelomr[0].qnt_marchas}}</b></p>
+    <p style="color:#000000;">Direção :<b>{{dadosmodelomr[0].tipo_direcao}}</b></p>
+    <p style="color:#000000;">Óleo Motor: <b>{{dadosmodelomr[0].tipo_oleo_motor}}</b></p>
+    <p style="color:#000000;">Óleo Direção: <b>{{dadosmodelomr[0].tipo_oleo_direcao}}</b></p>
+    <p style="color:#000000;">Calibragem Pneus: <b>{{dadosmodelomr[0].calibragem_pneu}}</b></p>
+    <p style="color:#000000;">Peso: <b>{{dadosmodelomr[0].peso_modelo}}</b> kg</p>
+    <p style="color:#000000;">Carga Máxima:<b>{{dadosmodelomr[0].carga_maxima}}</b> kg</p>
+    <p style="color:#000000;">Carga Máxima Reboque s/ Freio:<b>{{dadosmodelomr[0].peso_reboque_sem_freio}}</b> kg</p>
+    <p style="color:#000000;">Carga Máxima Reboque c/ Freio: <b>{{dadosmodelomr[0].peso_revoque_com_freio}}</b> kg</p>
+    <p style="color:#000000;">Qnt lugares:<b>{{dadosmodelomr[0].qnt_lugares}}</b></p>
+    <p style="color:#000000;">Porta Malas: <b>{{dadosmodelomr[0].volume_porta_malas}}</b> l</p>
+    <p style="color:#000000;">Tanque de Combustível: <b>{{dadosmodelomr[0].volume_tanque_combustivel}}</b> l</p>
+    <p style="color:#000000;">Freio Dianteiro: <b>{{dadosmodelomr[0].tipo_freio_dianteiro}}</b></p>
+    <p style="color:#000000;">Freio Traseiro: <b>{{dadosmodelomr[0].tipo_freio_traseiro}}</b></p>
+    <p style="color:#000000;">Categoria: <b>{{dadosmodelomr[0].tipo_categoria}}</b></p>
+    <p style="color:#000000;">ABS: <b>{{dadosmodelomr[0].tipo_abs}}</b></p>
+    <p style="color:#000000;">Airbag: <b>{{dadosmodelomr[0].tipo_airbag}}</b></p>
+    <p style="color:#000000;">Controle de Tração: <b>{{dadosmodelomr[0].tipo_controle_tracao}}</b></p>
+    <p style="color:#000000;">Controle de Estabilidade: <b>{{dadosmodelomr[0].tipo_controle_estabilidade}}</b></p>
+    <p style="color:#000000;">Controle de Frenagem: <b>{{dadosmodelomr[0].tipo_controle_frenagem}}</b></p>
+      </div>
   </ion-content>
 </ion-view>
