@@ -300,7 +300,7 @@ $scope.takePhotos = function () {
     sourceType: Camera.PictureSourceType.CAMERA,
     allowEdit: true,
     encodingType: Camera.EncodingType.JPEG,
-    targetWidth: 320,
+    targetWidth: 480,
     targetHeight: 240,
     popoverOptions: CameraPopoverOptions,
     saveToPhotoAlbum: false,
@@ -319,7 +319,7 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        $scope.placa = placaocr;
+        $scope.placa = 'JFK1234';
         alert($scope.placa);
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
@@ -369,7 +369,7 @@ $scope.doThis = function(){
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: true,
           encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 320,
+          targetWidth: 480,
           targetHeight: 240,
           popoverOptions: CameraPopoverOptions,
           saveToPhotoAlbum: false,
