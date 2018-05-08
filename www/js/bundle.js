@@ -299,6 +299,9 @@ $scope.definirPlaca = function()    {
 
 .controller('AccountCtrl', function($scope, $cordovaCamera, $ionicLoading) {
 
+    
+
+
       $scope.takePhoto = function () {
         var options = {
           quality: 100,
@@ -315,7 +318,7 @@ $scope.definirPlaca = function()    {
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
               $scope.imgURI = "data:image/jpeg;base64," + imageData;
-              $scope.testOcrad();
+              
           }, function (err) {
               // An error occured. Show a message to the user
           });
@@ -343,12 +346,21 @@ $scope.definirPlaca = function()    {
 
       $scope.testOcrad = function(){
         $ionicLoading.show();
-        OCRAD(document.getElementById("pic"), function(text){
-          $ionicLoading.hide();
-          console.log(text);
-          alert(text);
-        });
-      } 
+        try {
+            OCRAD(document.getElementById("pic"), function(text){
+              console.log(text);
+              alert(text);
+            });
+             $ionicLoading.hide();
+        }
+        catch(err) {
+             $ionicLoading.hide();
+        }
+       
+      }
+
+
+      $scope.testOcrad();
 
 
 });
