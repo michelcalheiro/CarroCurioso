@@ -1,17 +1,43 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Curiar">
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      <b>Psst!</b> - Try <a href="http://view.ionic.io/">Ionic View</a> to easily share and test your app with clients and co-workers.
-    </p>
+<form id="curiar-form1" class="list">
+
+        {{consulta}}
+
+        <label class="item item-input" id="curiar-input2">
+          <span class="input-label">Placa</span>
+          <input type="text" placeholder="AAA0000" ng-model="placa" ng-change="placa=placa.toUpperCase();">
+        </label>
+
+      <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca(placa)">Curiar</button>
+
+      <div class="list {{showB}}" >
+        <label class="item item-input item-select">
+          <div class="input-label">Carro</div>
+          <select ng-model="dadocarro" ng-change="selecionaCarro(dadocarro)">
+            <option ng-repeat="dadocarro in dadoscarro" selected>{{dadocarro.codigo_fipe}} / {{dadocarro.marca}} / {{dadocarro.modelo}}</option>
+          </select>
+        </label>
+      </div>
+
+
+      <div id="curiar-markdown1" class="show-list-numbers-and-dots" ng-model="consulta" >
+        <p style="color:#000000;">Marca: {{dadoscarro[item].marca}}</p>
+        <p style="color:#000000;">Modelo: {{dadoscarro[item].modelo}}</p>
+        <p style="color:#000000;">Ano: {{dadoscarro[item].ano}}</p>
+        <p style="color:#000000;">Fipe: {{dadoscarro[item].codigo_fipe}}</p>
+        <p style="color:#000000;">Importado: {{dadoscarro[item].importado}}</p>
+        <p style="color:#000000;">Cor: {{dadoscarro[item].cor}}</p>
+        <p style="color:#000000;">Chassis: {{dadoscarro[item].chassi}}</p>
+        <p style="color:#000000;">Valor: {{dadoscarro[item].valor}}</p>
+        <p style="color:#000000;">UF: {{dadoscarro[item].uf}}</p>
+        <p style="color:#000000;">Município: {{dadoscarro[item].municipio}}</p>
+      </div>
+
+
+      <div class="col" style="text-align: center;">
+        <button class="button icon-left ion-thumbsup button-energized {{showB}}" padding-left ng-click="definirPlaca()">Definir Placa Fipe</button>
+      </div>
+    </form>
   </ion-content>
 </ion-view>
