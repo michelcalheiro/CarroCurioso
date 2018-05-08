@@ -210,19 +210,20 @@ $scope.definirPlaca = function()    {
 
       $scope.takePhoto = function () {
         var options = {
-          quality: 75,
+          quality: 90,
           destinationType: Camera.DestinationType.DATA_URL,
           sourceType: Camera.PictureSourceType.CAMERA,
           allowEdit: true,
           encodingType: Camera.EncodingType.JPEG,
           targetWidth: 300,
-          targetHeight: 300,
+          targetHeight: 600,
           popoverOptions: CameraPopoverOptions,
           saveToPhotoAlbum: false
       };
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
               $scope.imgURI = "data:image/jpeg;base64," + imageData;
+              $scope.testOcrad();
           }, function (err) {
               // An error occured. Show a message to the user
           });
