@@ -334,7 +334,6 @@ $scope.definirPlaca = function()    {
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
               $scope.imgURI = "data:image/jpeg;base64," + imageData;
-              
           }, function (err) {
               // An error occured. Show a message to the user
           });
@@ -377,7 +376,7 @@ $scope.definirPlaca = function()    {
 
 
     $scope.doThis = function(){
-        alert('HAHA');
+        $scope.testOcrad();
       }
       
 
