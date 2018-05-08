@@ -318,8 +318,12 @@ $scope.testOcrad = function(){
   $ionicLoading.show();
   try {
       OCRAD(document.getElementById("pic"), function(text){
-        console.log(text);
-        alert(text);
+        var placaocr = text;
+        $scope.placa = placaocr;
+        if (placaocr.length == 8){
+          placaocr = placaocr.replace("-","");
+          $scope.consultarPlaca (placaocr);
+        }
       });
        $ionicLoading.hide();
   }
