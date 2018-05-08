@@ -187,7 +187,7 @@ $scope.definirPlaca = function()    {
 }
 
 
-$scope.takePhoto = function () {
+$scope.takePhotos = function () {
   var options = {
     quality: 100,
     destinationType: Camera.DestinationType.DATA_URL,
