@@ -11,6 +11,19 @@ var services = require('./services');
 
 angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
 
+.directive('imageonload', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                element.bind('load', function() {
+                    //call the function that was passed
+                    scope.$apply(attrs.imageonload);
+                });
+            }
+        };
+    })
+
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -88,8 +101,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
 });
 
+
+
 },{"./controllers":2,"./services":3}],2:[function(require,module,exports){
 angular.module('starter.controllers', [])
+
 
 .controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope' ,
  function($scope, $stateParams, $http, $ionicLoading, $rootScope) {
@@ -360,7 +376,10 @@ $scope.definirPlaca = function()    {
       }
 
 
-      $scope.testOcrad();
+    $scope.doThis = function(){
+        alert('HAHA');
+      }
+      
 
 
 });

@@ -10,6 +10,19 @@ var services = require('./services');
 
 angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
 
+.directive('imageonload', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                element.bind('load', function() {
+                    //call the function that was passed
+                    scope.$apply(attrs.imageonload);
+                });
+            }
+        };
+    })
+
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -86,3 +99,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
+
+

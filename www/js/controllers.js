@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+
 .controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope' ,
  function($scope, $stateParams, $http, $ionicLoading, $rootScope) {
 
@@ -269,7 +270,10 @@ $scope.definirPlaca = function()    {
       }
 
 
-      $scope.testOcrad();
+    $scope.doThis = function(){
+        alert('HAHA');
+      }
+      
 
 
 });
