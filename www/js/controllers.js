@@ -224,7 +224,7 @@ $scope.definirPlaca = function()    {
 
           $cordovaCamera.getPicture(options).then(function (imageData) {
               $scope.imgURI = "data:image/jpeg;base64," + imageData;
-              $scope.testOcrad();
+              //$scope.testOcrad();
           }, function (err) {
               // An error occured. Show a message to the user
           });
