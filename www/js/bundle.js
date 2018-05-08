@@ -107,7 +107,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 angular.module('starter.controllers', [])
 
 
-.controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope' ,
+.controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope', '$cordovaCamera',
  function($scope, $stateParams, $http, $ionicLoading, $rootScope, $cordovaCamera) {
 
 var placa = "";
