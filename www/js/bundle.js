@@ -110,14 +110,14 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope', '$cordovaCamera',
  function($scope, $stateParams, $http, $ionicLoading, $rootScope, $cordovaCamera) {
 
-var placa = "";
+//var placa = "";
 var resposta;
 var carros = 0;
 var sinesp = "";
 $scope.showB = "ng-hide";
 
-$scope.consultarPlaca = function(placa) {
-    $scope.placa = placa;
+$scope.consultarPlaca = function(placas) {
+    $scope.placa = placas;
     $ionicLoading.show();
     $scope.sinesp = "0";
     $scope.showB = "ng-hide";
@@ -319,8 +319,7 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        $scope.placa = 'JFK1234';
-        alert($scope.placa);
+        this.placa = text;
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
