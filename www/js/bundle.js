@@ -108,7 +108,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('DashCtrl', ['$scope', '$stateParams', '$http', '$ionicLoading','$rootScope' ,
- function($scope, $stateParams, $http, $ionicLoading, $rootScope) {
+ function($scope, $stateParams, $http, $ionicLoading, $rootScope, $cordovaCamera) {
 
 var placa = "";
 var resposta;
