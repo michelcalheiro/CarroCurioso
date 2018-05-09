@@ -1,14 +1,13 @@
-<ion-view view-title="Curiar">
+<ion-view view-title="Carro Curioso">
   <ion-content class="padding">
 <form id="curiar-form1" class="list">
 
         {{consulta}}
 
-      <button class="button button-full button-assertive" ng-click="takePhotos()">Tira Foto</button>
-
       <label class="item item-input" id="curiar-input2">
         <span class="input-label">Placa</span>
         <input type="text" placeholder="AAA0000" ng-model="$root.placa" ng-change="$root.placa=$root.placa.toUpperCase();">
+        <button class="button icon-left button-energized ion-camera" ng-click="takePhotos()">OCR</button>
       </label>
 
       <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca($root.placa)">Curiar</button>

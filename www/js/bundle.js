@@ -367,77 +367,15 @@ $scope.poePlaca = function(){
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  //$scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function($scope, $cordovaCamera, $ionicLoading) {
 
-    
-      $scope.takePhoto = function () {
-        var options = {
-          quality: 100,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.CAMERA,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 480,
-          targetHeight: 240,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false,
-          correctOrientatio:true
-      };
-
-          $cordovaCamera.getPicture(options).then(function (imageData) {
-              $scope.imgURI = "data:image/jpeg;base64," + imageData;
-          }, function (err) {
-              // An error occured. Show a message to the user
-          });
-      }
-
-      $scope.choosePhoto = function () {
-        var options = { 
-          quality: 100,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 300,
-          targetHeight: 300,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
-      };
-
-          $cordovaCamera.getPicture(options).then(function (imageData) {
-              $scope.imgURI = "data:image/jpeg;base64," + imageData;
-          }, function (err) {
-              // An error occured. Show a message to the user
-          });
-      }
-
-      $scope.testOcrad = function(){
-        $ionicLoading.show();
-        try {
-            OCRAD(document.getElementById("pic"), function(text){
-              $scope.placa = text;
-              if (text.length == 8) {
-                  $scope.placa = $scope.placa.replace("-","");
-                  $scope.consultarPlaca($scope.placa);
-              }
-              //console.log(text);
-              //alert(text);
-            });
-             $ionicLoading.hide();
-        }
-        catch(err) {
-             $ionicLoading.hide();
-        }
-       
-      }
-
-      $scope.doThis = function(){
-        $scope.testOcrad();
-      }
-      
+$scope.reportaBug = function(descbug){
+  alert (descbug);
+}
+         
 
 
 });
