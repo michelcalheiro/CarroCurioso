@@ -213,7 +213,8 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        this.placa = text;
+        alert (placaocr);
+        this.placa = placaocr;
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
