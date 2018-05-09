@@ -11,7 +11,7 @@
         <input type="text" placeholder="AAA0000" ng-model="$root.placa" ng-change="$root.placa=$root.placa.toUpperCase();">
       </label>
 
-      <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca(placa)">Curiar</button>
+      <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca($root.placa)">Curiar</button>
 
       <div class="list {{showB}}" >
         <label class="item item-input item-select">

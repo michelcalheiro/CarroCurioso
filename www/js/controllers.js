@@ -103,15 +103,16 @@ $scope.consultarPlacaCC = function()  {
             $scope.item = 0;
             $scope.consulta = '';
             dadoscarro = JSON.stringify(response.data);
-            if (dadoscarro.length > 5) { 
-                $scope.dadoscarro = JSON.parse(dadoscarro);
+            if (dadoscarro.length > 10) { 
+                $scope.dadoscarro = JSON.parse(dadoscarro).placas;
                 $scope.carros = $scope.dadoscarro.length;
                 if($scope.carros > 1 ){
                    $scope.showB = "ng-show";
                 }else{
                     $scope.showB = "ng-hide";
                 }
-                $scope.consultarModeloMR();
+                $rootScope.dadosmodelomr = JSON.parse(dadoscarro).carros;
+                $ionicLoading.hide();
             } else {
                 $scope.showB = "ng-hide";
                 $scope.consulta = 'Placa não Encontrada';
@@ -127,6 +128,7 @@ $scope.consultarPlacaCC = function()  {
     }, function myError(response) {
         $ionicLoading.hide();
         $scope.dadoscarro = null;
+        $rootScope.dadosmodelomr = null;
         $scope.carros = 0;
         $scope.item = 0;
         $rootScope.dadosmodelomr = null
@@ -213,9 +215,7 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        alert ($rootScope.placa);
         $rootScope.placa = placaocr;
-        alert ($rootScope.placa);
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
