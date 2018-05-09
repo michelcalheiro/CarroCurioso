@@ -8,7 +8,7 @@
 
       <label class="item item-input" id="curiar-input2">
         <span class="input-label">Placa</span>
-        <input type="text" placeholder="AAA0000" ng-model="placa" ng-change="placa=placa.toUpperCase();">
+        <input type="text" placeholder="AAA0000" ng-model="$root.placa" ng-change="$root.placa=$root.placa.toUpperCase();">
       </label>
 
       <button id="curiar-button1" class="button button-energized button-block icon-left ion-android-car" ng-click="consultarPlaca(placa)">Curiar</button>

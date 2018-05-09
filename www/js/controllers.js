@@ -213,9 +213,9 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        alert (this.placa);
-        this.placa = placaocr;
-        alert (this.placa);
+        alert ($rootScope.placa);
+        $rootScope.placa = placaocr;
+        alert ($rootScope.placa);
         $scope.placaocr = placaocr;
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
@@ -235,9 +235,9 @@ $scope.doThis = function(){
 }
 
 $scope.poePlaca = function(){
-  alert (this.placa);
-  this.placa = 'ABC';
-  alert (this.placa);
+  alert ($rootScope.placa);
+  $rootScope.placa = 'ABC';
+  alert ($rootScope.placa);
 }
 
 
