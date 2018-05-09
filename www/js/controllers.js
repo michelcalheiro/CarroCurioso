@@ -213,15 +213,16 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
+        alert ($rootScope.placa);
         $rootScope.placa = placaocr;
+        alert ($rootScope.placa);
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
         }
-
-      });
         location.reload();
         $ionicLoading.hide();
+      });
   }
   catch(err) {
        $ionicLoading.hide();
