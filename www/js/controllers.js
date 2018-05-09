@@ -220,13 +220,13 @@ $scope.testOcrad = function(){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
         }
-        location.reload();
+        //location.reload();
         $ionicLoading.hide();
       });
   }
   catch(err) {
        $ionicLoading.hide();
-       location.reload();
+       //location.reload();
   }
  
 }
