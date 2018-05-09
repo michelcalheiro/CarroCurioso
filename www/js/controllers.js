@@ -214,7 +214,7 @@ $scope.testOcrad = function(){
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
         alert (placaocr);
-        this.placa = placaocr;
+        $scope.placaocr = placaocr;
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
@@ -230,7 +230,14 @@ $scope.testOcrad = function(){
 
 $scope.doThis = function(){
   $scope.testOcrad();
+  this.placa = $scope.placaocr;
 }
+
+$scope.poePlaca = function(){
+  this.placa = 'ABC';
+}
+
+
 
 }])
 

@@ -335,8 +335,15 @@ $scope.testOcrad = function(){
 }
 
 $scope.doThis = function(){
+  debugger;
   $scope.testOcrad();
 }
+
+$scope.poePlaca = function(){
+  this.placa = 'ABC';
+}
+
+
 
 }])
 
