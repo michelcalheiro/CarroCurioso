@@ -319,19 +319,19 @@ $scope.testOcrad = function(){
   try {
       OCRAD(document.getElementById("pic"), function(text){
         var placaocr = text;
-        alert ($rootScope.placa);
         $rootScope.placa = placaocr;
-        alert ($rootScope.placa);
-        $scope.placaocr = placaocr;
         if (placaocr.length == 8){
           placaocr = placaocr.replace("-","");
           $scope.consultarPlaca (placaocr);
         }
+
       });
-       $ionicLoading.hide();
+        location.reload();
+        $ionicLoading.hide();
   }
   catch(err) {
        $ionicLoading.hide();
+       location.reload();
   }
  
 }
