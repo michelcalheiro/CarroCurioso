@@ -8,7 +8,7 @@
 var controllers = require('./controllers');
 var services = require('./services');
 
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ionic.native', 'ngCordova', 'starter.controllers', 'starter.services'])
 
 .directive('imageonload', function() {
         return {

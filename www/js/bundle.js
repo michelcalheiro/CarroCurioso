@@ -9,7 +9,7 @@
 var controllers = require('./controllers');
 var services = require('./services');
 
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ionic.native', 'ngCordova', 'starter.controllers', 'starter.services'])
 
 .directive('imageonload', function() {
         return {
@@ -401,14 +401,16 @@ $scope.takePhotos = function () {
   $scope.openALPR = function(imgURI){
 
     //cordova.plugins.OpenALPR.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
-
-    //var openalpr = cordova.require("cordova/plugin/openalpr");
-
-  cordova.plugins.OpenALPR.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
+    //  $cordovaOpenalpr.scan('img/bmw.jpg', { country: 'br', amount: 3 }, function (results) {
+  alert('um');
+  cordova.plugins.OpenALPR.scan('img/bmw.jpg', { country: 'br', amount: 3 }, function (results) {
+      alert('dois');
       alert(results);
    }, function (error) {
+      alert('tres');
        alert(error.code + ': ' + error.message)
    });
+  alert('quatro');
   }
 
 })
