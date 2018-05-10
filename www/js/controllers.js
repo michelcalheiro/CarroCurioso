@@ -287,6 +287,7 @@ $scope.takePhotos = function () {
     $cordovaCamera.getPicture(options).then(function (imageData) {
          $scope.openALPR ("data:image/jpeg;base64," + imageData) ;
     }, function (err) {
+        alert(err);
         // An error occured. Show a message to the user
     });
 }
