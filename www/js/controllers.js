@@ -293,7 +293,12 @@ $scope.takePhotos = function () {
 }
 
   $scope.openALPR = function(imgURI){
-      cordova.plugins.OpenALPR.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
+
+    //cordova.plugins.OpenALPR.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
+
+    var openalpr = cordova.require("cordova/plugin/openalpr");
+
+  openalpr.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
       alert(results);
    }, function (error) {
        alert(error.code + ': ' + error.message)
