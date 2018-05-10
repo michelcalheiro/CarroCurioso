@@ -9,6 +9,8 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
+    "@ionic-native/core": "^4.7.0",
+    "@ionic-native/openalpr": "^4.7.0",
     "browserify": "^16.2.0",
     "cordova-android": "7.0.0",
     "cordova-ios": "4.5.4",
