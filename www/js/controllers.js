@@ -266,10 +266,38 @@ $scope.poePlaca = function(){
 
 .controller('AccountCtrl', function($scope, $cordovaCamera, $ionicLoading) {
 
-$scope.reportaBug = function(descbug){
-  alert (descbug);
+  $scope.reportaBug = function(descbug){
+    alert (descbug);
+  }
+
+$scope.takePhotos = function () {
+  var options = {
+    quality: 100,
+    destinationType: Camera.DestinationType.DATA_URL,
+    sourceType: Camera.PictureSourceType.CAMERA,
+    allowEdit: true,
+    encodingType: Camera.EncodingType.JPEG,
+    targetWidth: 480,
+    targetHeight: 240,
+    popoverOptions: CameraPopoverOptions,
+    saveToPhotoAlbum: false,
+    correctOrientatio:true
+};
+
+    $cordovaCamera.getPicture(options).then(function (imageData) {
+         $scope.openALPR ("data:image/jpeg;base64," + imageData) ;
+    }, function (err) {
+        // An error occured. Show a message to the user
+    });
 }
+
+  $scope.openALPR = function(imgURI){
+      cordova.plugins.OpenALPR.scan(imgURI, { country: 'br', amount: 3 }, function (results) {
+      alert(results);
+   }, function (error) {
+       alert(error.code + ': ' + error.message)
+   });
+  }
+
+})
          
-
-
-});
